@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ohanami Scoring Companion</title>
+  </head>
+  <body>
+    <style>
+      * {
+        font-family: "Work Sans", Helvetica, Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-weight: 300;
+        color: #B15B55;
+        margin: 0px;
+        box-sizing: border-box;
+      }
+      html {
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+        overflow:hidden;
+      }
+      body {
+        height: 100%;
+        width: 100%;
+        border: 12px solid rgba(255,255,255,1);
+        border-radius: 24px;
+      }
+      body::before {
+        content: '';
+        width: calc(100vw - 24px);
+        height: calc(100vh - 24px);
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        border: 12px solid white;
+        pointer-events: none;
+      }
+      #background-blossoms {
+        width: 104vw;
+        height: 105vh;
+        position: fixed;
+        opacity: 0.6;
+        left: -2vw;
+        top: -2vh;
+        object-fit: cover;
+        object-position: bottom right;
+        filter: blur(24px);
+        z-index: -1;
+        pointer-events: none;
+      }
+      #blossoms-animation {
+        position: fixed;
+        right: 0px;
+        bottom: 0px;
+        width: 100vw;
+        height: 100vh;
+        filter: blur(12px);
+        z-index: 100;
+        pointer-events: none;
+      }
+    </style>
+    <img id="background-blossoms" src="./src/assets/blossoms-background.jpg" />
+    <img id="blossoms-animation" src="./src/assets/blossoms.png" />
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
