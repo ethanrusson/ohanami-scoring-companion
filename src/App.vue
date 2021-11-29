@@ -59,9 +59,7 @@ function calculateScores(e) {
     player.scores.blossoms[3] = 0;
     for(let i = 1; i <= player.scores.blossoms[2]; i++) {
       player.scores.blossoms[3] = player.scores.blossoms[3] + i;
-      console.log(player.scores.blossoms[3]);
     }
-    console.log(player.scores.water[3], player.scores.plants[3], player.scores.stone[3], player.scores.blossoms[3]);
     player.totalScore = player.scores.water[3] + player.scores.plants[3] + player.scores.stone[3] + player.scores.blossoms[3];
   });
   players.value.sort((a, b) => (a.totalScore < b.totalScore) ? 1 : -1);
