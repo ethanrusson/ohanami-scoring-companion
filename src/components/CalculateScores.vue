@@ -71,8 +71,9 @@ $c_blossoms: #ecc3c3;
         }
     }
     #players-container {
-        max-height: calc(100vh - 240px);
-        overflow-y: scroll;
+        flex: 1;
+        max-height: calc(100vh - 168px);
+        overflow: auto;
         &::-webkit-scrollbar {
             width: 6px;
         }
@@ -80,7 +81,7 @@ $c_blossoms: #ecc3c3;
         &::-webkit-scrollbar-thumb {
             background-color: white;
             border-radius: 6px;
-            border: 6px solid rgba(255, 255, 255, 0);
+            border: 3px solid rgba(255, 255, 255, 0);
         }
         .player-card {
             height: 100%;
@@ -90,6 +91,11 @@ $c_blossoms: #ecc3c3;
             margin-bottom: 12px;
             background: rgba(white, 0.8);
             border-radius: 12px;
+            @media (max-width: 800px) {
+                padding: 12px 0px 0px 12px;
+                flex: 1;
+                margin-right: 6px;
+            }
             .player-card-header {
                 display: flex;
                 align-items: center;
@@ -105,12 +111,13 @@ $c_blossoms: #ecc3c3;
             }
             .score-details {
                 display: flex;
+                flex-wrap: wrap;
                 span {
                     flex: 1;
                     max-width: 175px;
                     display: inline-flex;
                     align-items: center;
-                    margin-right: 12px;
+                    margin: 0px 12px 12px 0px;
                     padding: 6px;
                     border-radius: 12px;
                     &.water {
@@ -160,9 +167,6 @@ $c_blossoms: #ecc3c3;
                         button {
                             background: $c_blossoms;
                         }
-                    }
-                    &:last-of-type {
-                        margin-right: 0px;
                     }
                 }
             }

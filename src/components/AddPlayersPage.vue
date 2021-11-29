@@ -34,7 +34,7 @@ function startScoring() {
             <h1>Players</h1>
             <div v-for="player of currentPlayers" :key="player.id" class="player-card">
                 <input v-model="player.name" placeholder="Enter player name" />
-                <button class="button-secondary" @click='removePlayer(player.id)'>
+                <button tabindex="-1" class="button-secondary" @click='removePlayer(player.id)'>
                     <img src="../assets/close.svg" />
                 </button>
             </div>

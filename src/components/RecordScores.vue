@@ -39,27 +39,54 @@ function calculateScores() {
                     <p>{{ player.name }}</p>
                     <div>
                         <span class="water" v-if="selectedRound > 0">
-                            <button tabindex="-1" @click="player.scores.water[(selectedRound - 1)]--">-</button>
+                            <button
+                                tabindex="-1"
+                                @click="player.scores.water[(selectedRound - 1)]--"
+                            >-</button>
                             <input v-model="player.scores.water[(selectedRound - 1)]" type="number" />
-                            <button tabindex="-1" @click="player.scores.water[(selectedRound - 1)]++">+</button>
+                            <button
+                                tabindex="-1"
+                                @click="player.scores.water[(selectedRound - 1)]++"
+                            >+</button>
                         </span>
                         <span class="plants" v-if="selectedRound > 1">
-                            <button tabindex="-1" @click="player.scores.plants[(selectedRound - 1)]--">-</button>
-                            <input v-model="player.scores.plants[(selectedRound - 1)]" type="number" />
-                            <button tabindex="-1" @click="player.scores.plants[(selectedRound - 1)]++">+</button>
+                            <button
+                                tabindex="-1"
+                                @click="player.scores.plants[(selectedRound - 1)]--"
+                            >-</button>
+                            <input
+                                v-model="player.scores.plants[(selectedRound - 1)]"
+                                type="number"
+                            />
+                            <button
+                                tabindex="-1"
+                                @click="player.scores.plants[(selectedRound - 1)]++"
+                            >+</button>
                         </span>
                         <span class="stone" v-if="selectedRound > 2">
-                            <button tabindex="-1" @click="player.scores.stone[(selectedRound - 1)]--">-</button>
+                            <button
+                                tabindex="-1"
+                                @click="player.scores.stone[(selectedRound - 1)]--"
+                            >-</button>
                             <input v-model="player.scores.stone[(selectedRound - 1)]" type="number" />
-                            <button tabindex="-1" @click="player.scores.stone[(selectedRound - 1)]++">+</button>
+                            <button
+                                tabindex="-1"
+                                @click="player.scores.stone[(selectedRound - 1)]++"
+                            >+</button>
                         </span>
                         <span class="blossoms" v-if="selectedRound > 2">
-                            <button tabindex="-1" @click="player.scores.blossoms[(selectedRound - 1)]--">-</button>
+                            <button
+                                tabindex="-1"
+                                @click="player.scores.blossoms[(selectedRound - 1)]--"
+                            >-</button>
                             <input
                                 v-model="player.scores.blossoms[(selectedRound - 1)]"
                                 type="number"
                             />
-                            <button tabindex="-1" @click="player.scores.blossoms[(selectedRound - 1)]++">+</button>
+                            <button
+                                tabindex="-1"
+                                @click="player.scores.blossoms[(selectedRound - 1)]++"
+                            >+</button>
                         </span>
                     </div>
                 </div>
@@ -80,7 +107,13 @@ function calculateScores() {
                     @click="selectRound(3)"
                 >3</button>
             </div>
-            <button class="button-primary" @click="calculateScores()">Calculate</button>
+            <button
+                id="calculate-button"
+                class="button-primary"
+                @click="calculateScores()"
+            >
+                Calculate
+            </button>
         </div>
     </div>
 </template>
@@ -98,6 +131,8 @@ $c_blossoms: #ecc3c3;
     justify-content: space-between;
     #record-scores-container {
         flex: 1;
+        display: flex;
+        flex-direction: column;
         #score-multipliers {
             display: flex;
             margin-bottom: 12px;
@@ -125,32 +160,35 @@ $c_blossoms: #ecc3c3;
         #players-container {
             flex: 1;
             max-height: calc(100vh - 240px);
-            overflow-y: scroll;
+            overflow: auto;
             &::-webkit-scrollbar {
                 width: 6px;
             }
-            
+
             &::-webkit-scrollbar-thumb {
                 background-color: white;
                 border-radius: 6px;
-                border: 6px solid rgba(255,255,255,0);
-            }
-            @media (max-width: 800px) {
-                display: flex;
+                border: 3px solid rgba(255, 255, 255, 0);
             }
             .player-card {
-                height: 100%;
-                min-width: 300px;
                 padding: 12px;
                 margin-right: 12px;
                 margin-bottom: 12px;
                 background: rgba(white, 0.8);
                 border-radius: 12px;
+                @media(max-width: 800px) {
+                    padding-bottom: 0px;
+                    flex: 1;
+                    margin-right: 6px;
+                }
                 p {
                     margin-bottom: 12px;
                 }
                 div {
                     display: flex;
+                    @media(max-width: 800px) {
+                        flex-direction: column;
+                    }
                     span {
                         flex: 1;
                         max-width: 175px;
@@ -158,6 +196,10 @@ $c_blossoms: #ecc3c3;
                         margin-right: 12px;
                         padding: 6px;
                         border-radius: 12px;
+                        @media(max-width:800px) {
+                            max-width: 100%;
+                            margin: 0px 0px 12px 0px;
+                        }
                         button {
                             color: white;
                             height: 36px;
@@ -174,6 +216,10 @@ $c_blossoms: #ecc3c3;
                             margin: 0px 6px;
                             background: none;
                             border-radius: 6px;
+                            @media(max-width:800px) {
+                                width: 100%;
+                                flex: 1;
+                            }
                         }
                         &.water {
                             background: rgba($c_water, 0.12);
@@ -246,7 +292,16 @@ $c_blossoms: #ecc3c3;
                     &::before {
                         border-radius: 27px;
                     }
+                    @media(max-width: 360px) {
+                        margin-right: 6px;
+                    }
                 }
+            }
+        }
+        #calculate-button {
+            @media (max-width: 800px) {
+                letter-spacing: 0px;
+                font-size: 16px;
             }
         }
     }
