@@ -117,6 +117,7 @@ $c_primary: #b15b55;
   flex-direction: column;
   justify-content: center;
   min-height: calc(100vh - 24px);
+  min-height: -webkit-fill-available;
   max-width: 800px;
   margin: 0 auto;
   padding: 12px;
