@@ -75,7 +75,7 @@ function returnToScoring(e) {
 </script>
 
 <template>
-  <header>
+  <header v-bind:class="{ startpage: onStartPage }">
     <div id="vertical-header" v-if="onStartPage">
       <img id="ohanami-logo-vertical" src="./assets/ohanami-vertical.svg" />
       <p>Unofficial</p>
@@ -207,11 +207,13 @@ $c_primary: #b15b55;
     }
   }
   header {
-    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    &.startpage {
+      flex: 1;
+    }
     p {
       margin-top: 24px;
       font-size: 18px;
