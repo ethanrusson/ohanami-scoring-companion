@@ -115,12 +115,20 @@ $c_primary: #b15b55;
 #app {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  min-height: calc(100vh - 24px);
-  min-height: -webkit-fill-available;
+  // justify-content: center;
+  height: -webkit-fill-available;
   max-width: 800px;
   margin: 0 auto;
   padding: 12px;
+  overflow: auto;
+  &::-webkit-scrollbar {
+      width: 6px;
+  }
+  &::-webkit-scrollbar-thumb {
+      background-color: rgba(255,255,255,0.6);
+      border-radius: 6px;
+      border: 3px solid rgba(255, 255, 255, 0);
+  }
   & *::selection {
     background-color: rgba($c_primary, 0.24);
   }
@@ -199,6 +207,7 @@ $c_primary: #b15b55;
     }
   }
   header {
+    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -214,8 +223,10 @@ $c_primary: #b15b55;
       width: 100%;
     }
     #vertical-header {
+      flex: 1;
       display: flex;
       flex-direction: column;
+      justify-content: flex-end;
     }
     #horizontal-header {
       width: 100%;

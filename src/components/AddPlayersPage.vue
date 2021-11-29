@@ -39,6 +39,7 @@ function startScoring() {
                 </button>
             </div>
             <button
+                id="add-player"
                 class="button-secondary"
                 @click="addPlayer()"
                 :disabled="currentPlayers.length > 7"
@@ -53,7 +54,6 @@ function startScoring() {
 <style scoped lang="scss">
 #add-players-page {
     margin-top: 24px;
-    padding-bottom: 24px;
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -63,6 +63,9 @@ function startScoring() {
     }
     button {
         width: 100%;
+        &#add-player {
+            margin-bottom: 12px;
+        }
     }
     .player-card {
         display: flex;

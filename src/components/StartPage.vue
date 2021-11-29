@@ -24,6 +24,7 @@ function startScoreGroup(){
     flex-direction: column;
     align-items: center;
     text-align: center;
+    padding-bottom: 10vh;
 }
 button {
     display: inline-block;
