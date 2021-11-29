@@ -72,17 +72,6 @@ $c_blossoms: #ecc3c3;
     }
     #players-container {
         flex: 1;
-        max-height: calc(100vh - 168px);
-        overflow: auto;
-        &::-webkit-scrollbar {
-            width: 6px;
-        }
-
-        &::-webkit-scrollbar-thumb {
-            background-color: white;
-            border-radius: 6px;
-            border: 3px solid rgba(255, 255, 255, 0);
-        }
         .player-card {
             height: 100%;
             min-width: 300px;
