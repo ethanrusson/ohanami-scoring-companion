@@ -4,10 +4,10 @@ import { ref } from 'vue'
 const emit = defineEmits(['start-score-yourself', 'start-score-group']);
 
 function startScoreYourself(){
-    this.emit('start-score-yourself', false)
+    emit('start-score-yourself', false)
 }
 function startScoreGroup(){
-    this.emit('start-score-group', false)
+    emit('start-score-group', false)
 }
 </script>
 

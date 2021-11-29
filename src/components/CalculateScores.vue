@@ -8,7 +8,7 @@ defineProps({
 const emit = defineEmits(['returnToScoring']);
 
 function returnToScoring() {
-    this.emit('returnToScoring', true);
+    emit('returnToScoring', true);
 }
 </script>
 

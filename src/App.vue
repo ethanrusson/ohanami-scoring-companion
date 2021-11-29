@@ -95,9 +95,20 @@ function returnToScoring(e) {
     @start-score-yourself="startScoreYourself"
     @start-score-group="startScoreGroup"
   />
-  <AddPlayersPage v-if="onAddPlayers" @players="startScoring" />
-  <RecordScores v-if="onStartScoring" @calculateScores="calculateScores" v-model:players="players" />
-  <CalculateScores v-if="onCalculateScores" @returnToScoring="returnToScoring" :players="players"/>
+  <AddPlayersPage 
+    v-if="onAddPlayers" 
+    @players="startScoring"
+  />
+  <RecordScores 
+    v-if="onStartScoring" 
+    @calculateScores="calculateScores" 
+    v-model:players="players" 
+  />
+  <CalculateScores 
+    v-if="onCalculateScores" 
+    @returnToScoring="returnToScoring" 
+    :players="players"
+  />
 </template>
 
 <style lang="scss">

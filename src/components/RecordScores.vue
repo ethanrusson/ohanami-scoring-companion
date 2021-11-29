@@ -13,7 +13,7 @@ function selectRound(number) {
 }
 
 function calculateScores() {
-    this.emit('calculateScores', true);
+    emit('calculateScores', true);
 }
 </script>
 

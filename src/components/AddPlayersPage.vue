@@ -24,7 +24,7 @@ function removePlayer(id) {
     }
 }
 function startScoring() {
-    this.emit('players', currentPlayers.value);
+    emit('players', currentPlayers.value);
 }
 </script>
 
