@@ -43,7 +43,7 @@ function calculateScores() {
                                 tabindex="-1"
                                 @click="player.scores.water[(selectedRound - 1)]--"
                             >-</button>
-                            <input v-model="player.scores.water[(selectedRound - 1)]" type="number" />
+                            <input v-model="player.scores.water[(selectedRound - 1)]" inputmode="numeric" />
                             <button
                                 tabindex="-1"
                                 @click="player.scores.water[(selectedRound - 1)]++"
@@ -56,7 +56,7 @@ function calculateScores() {
                             >-</button>
                             <input
                                 v-model="player.scores.plants[(selectedRound - 1)]"
-                                type="number"
+                                inputmode="numeric"
                             />
                             <button
                                 tabindex="-1"
@@ -68,7 +68,7 @@ function calculateScores() {
                                 tabindex="-1"
                                 @click="player.scores.stone[(selectedRound - 1)]--"
                             >-</button>
-                            <input v-model="player.scores.stone[(selectedRound - 1)]" type="number" />
+                            <input v-model="player.scores.stone[(selectedRound - 1)]" inputmode="numeric" />
                             <button
                                 tabindex="-1"
                                 @click="player.scores.stone[(selectedRound - 1)]++"
@@ -81,7 +81,7 @@ function calculateScores() {
                             >-</button>
                             <input
                                 v-model="player.scores.blossoms[(selectedRound - 1)]"
-                                type="number"
+                                inputmode="numeric"
                             />
                             <button
                                 tabindex="-1"

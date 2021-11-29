@@ -76,7 +76,7 @@ function returnToScoring(e) {
 
 <template>
   <header>
-    <div v-if="onStartPage">
+    <div id="vertical-header" v-if="onStartPage">
       <img id="ohanami-logo-vertical" src="./assets/ohanami-vertical.svg" />
       <p>Unofficial</p>
       <h1>Scoring Companion</h1>
@@ -213,6 +213,10 @@ $c_primary: #b15b55;
       border-bottom: 2px solid rgba(white, 0.25);
       width: 100%;
     }
+    #vertical-header {
+      display: flex;
+      flex-direction: column;
+    }
     #horizontal-header {
       width: 100%;
       display: flex;
@@ -222,7 +226,7 @@ $c_primary: #b15b55;
   }
 }
 #ohanami-logo-vertical {
-  height: 50vh;
+  max-height: 40vh;
 }
 #ohanami-logo-horizontal {
   height: 48px;
