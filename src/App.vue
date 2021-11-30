@@ -120,7 +120,7 @@ $c_primary: #b15b55;
   margin: 0 auto;
   padding: 12px;
   overflow: auto;
-  @media(max-width: 800px) {
+  @media(max-width: 400px) {
     padding: 12px 12px 0px 12px;
   }
   &::-webkit-scrollbar {
