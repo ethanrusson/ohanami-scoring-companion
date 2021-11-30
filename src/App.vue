@@ -166,6 +166,7 @@ $c_primary: #b15b55;
     transition: 0.2s ease;
     background: white;
     position: relative;
+    touch-action: manipulation;
     &::before {
       content: "";
       position: absolute;
