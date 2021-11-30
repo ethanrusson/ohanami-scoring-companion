@@ -39,6 +39,15 @@
         border: 12px solid white;
         pointer-events: none;
       }
+      @media(max-width: 800px) {
+        body {
+          border: none;
+          border-radius: 0px;
+        }
+        body::before {
+          display: none;
+        }
+      }
       #background-blossoms {
         width: 104vw;
         height: -webkit-fill-available;

@@ -241,6 +241,9 @@ $c_primary: #b15b55;
 }
 #ohanami-logo-vertical {
   max-height: 40vh;
+  @media(max-width: 800px) {
+    max-height: 30vh;
+  }
 }
 #ohanami-logo-horizontal {
   height: 48px;
